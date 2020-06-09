@@ -1,0 +1,14 @@
+.container {
+  margin-top: auto;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  background-color: blueviolet;
+}
+.titulo {
+  background-color: chartreuse;
+}
+.button {
+  height: 500;
+  background-color: chartreuse;
+}
