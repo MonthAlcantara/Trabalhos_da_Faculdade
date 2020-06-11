@@ -76,17 +76,17 @@ const apertouBotaoEnviar = (event) => {
       alert('Por favor, indique um e-mail válido. Não esqueça do @ e do .');
       inputEmail.focus();
     } else if (inputDia.value < 1 || inputDia.value > 31 || !inputDia.value) {
-      alert('Por favor, uma data válida. (DIA)');
+      alert('Por favor, informe uma data válida. (DIA)');
       inputDia.focus();
     } else if (inputMes.value < 1 || inputMes.value > 12 || !inputMes.value) {
-      alert('Por favor, uma data válida. (MÊS)');
+      alert('Por favor, informe uma data válida. (MÊS)');
       inputMes.focus();
     } else if (
       inputAno.value < 1920 ||
       inputAno.value > 2020 ||
       !inputAno.value
     ) {
-      alert('Por favor, uma data válida. (ANO)');
+      alert('Por favor, informe uma data válida. (ANO)');
       inputAno.focus();
     } else if (
       resCivil(inputEstadoCivil.value) === 'Solteiro' &&
@@ -95,7 +95,7 @@ const apertouBotaoEnviar = (event) => {
       alert('Solteiros, São aceitos apenas maiores de 15 anos');
       inputAno.focus();
     } else {
-      window.alert('Dados enviados');
+      window.alert('Cadastrado com sucesso !!!');
       formOk = true;
     }
   }
