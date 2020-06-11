@@ -78,6 +78,7 @@ const apertouBotaoEnviar = (event) => {
       );
       inputName.focus();
     } else if (
+      userEmail.length < 10 ||
       userEmail.indexOf('@') == -1 ||
       userEmail.indexOf('.') == -1 ||
       userEmail == '' ||
@@ -86,9 +87,28 @@ const apertouBotaoEnviar = (event) => {
       alert('Por favor, indique um e-mail válido.');
       inputEmail.focus();
       return false;
+    } else if (inputDia.value < 1 || inputDia.value > 31 || !inputDia.value) {
+      alert('Por favor, uma data válida.');
+      inputDia.focus();
+    } else if (inputMes.value < 1 || inputMes.value > 12 || !inputMes.value) {
+      alert('Por favor, uma data válida.');
+      inputMes.focus();
+    } else if (
+      inputAno.value < 1920 ||
+      inputAno.value > 2020 ||
+      !inputAno.value
+    ) {
+      alert('Por favor, uma data válida.');
+      inputAno.focus();
+    } else if (
+      resCivil(inputEstadoCivil.value) === 'Solteiro' &&
+      inputAno.value > 2005
+    ) {
+      alert('Solteiros são aceitos apenas maiores de 15 anos');
+      inputAno.focus();
     } else {
       window.alert('Dados enviados');
-      alertaMessage();
+      //alertaMessage();
     }
   }
   function alertaMessage() {
