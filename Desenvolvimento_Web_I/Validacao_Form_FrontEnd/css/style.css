@@ -3,12 +3,18 @@
   align-items: center;
   height: 500px;
   width: 500px;
-  background-color: blueviolet;
+  border: solid black;
 }
-.titulo {
-  background-color: chartreuse;
-}
-.button {
-  height: 500;
-  background-color: chartreuse;
+
+button {
+  font-family: arial;
+  width: 500px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
 }
