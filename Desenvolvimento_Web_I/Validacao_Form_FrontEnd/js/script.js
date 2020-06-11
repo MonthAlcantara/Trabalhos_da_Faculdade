@@ -7,7 +7,7 @@ let inputEstadoCivil = null;
 let inputDia = null;
 let inputMes = null;
 let inputAno = null;
-
+let formOk = false;
 //Função Main
 window.addEventListener('load', () => {
   carregaElementos();
@@ -18,7 +18,6 @@ window.addEventListener('load', () => {
 
   function capturaEventos() {
     botaoEnviar.addEventListener('click', apertouBotaoEnviar);
-    form.addEventListener('submit', preventFormSubmit);
   }
 
   //Função de associação de elementos
@@ -40,6 +39,7 @@ window.addEventListener('load', () => {
 const apertouBotaoEnviar = (event) => {
   let user = inputName.value;
   let userEmail = inputEmail.value;
+  form.addEventListener('submit', preventFormSubmit);
   validaCampos();
 
   //Função de captura do resultado Estado Civil
@@ -60,6 +60,7 @@ const apertouBotaoEnviar = (event) => {
   function validaCampos() {
     if (user === '') {
       window.alert('Você precisa digitar um nome');
+      inputName.focus();
     } else if (user.length < 15) {
       window.alert(
         'Você precisa digitar um nome válido com no mínimo 15 caracteres'
@@ -91,13 +92,17 @@ const apertouBotaoEnviar = (event) => {
       resCivil(inputEstadoCivil.value) === 'Solteiro' &&
       inputAno.value > 2005
     ) {
-      alert('Solteiros são aceitos apenas maiores de 15 anos');
+      alert('Solteiros, São aceitos apenas maiores de 15 anos');
       inputAno.focus();
-      return false;
-    } else window.alert('Dados enviados');
+    } else {
+      window.alert('Dados enviados');
+      formOk = true;
+    }
   }
 };
 
 const preventFormSubmit = (event) => {
-  event.preventDefault();
+  if (!formOk) {
+    event.preventDefault();
+  }
 };
