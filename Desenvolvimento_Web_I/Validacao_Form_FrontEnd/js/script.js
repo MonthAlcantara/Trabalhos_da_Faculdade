@@ -85,15 +85,15 @@ const apertouBotaoEnviar = (event) => {
       inputAno.value < 1920 ||
       inputAno.value > 2020 ||
       !inputAno.value
-    ) {
-      alert('Por favor, informe uma data válida. (ANO)');
-      inputAno.focus();
-    } else if (
-      resCivil(inputEstadoCivil.value) === 'Solteiro' &&
-      inputAno.value > 2005
-    ) {
-      alert('Solteiros, São aceitos apenas maiores de 15 anos');
-      inputAno.focus();
+      ) {
+        alert('Por favor, informe uma data válida. (ANO)');
+        inputAno.focus();
+      } else if (
+        resCivil(inputEstadoCivil.value) === 'Solteiro' &&
+        inputAno.value > 2005
+        ) {
+          alert('Solteiros, São aceitos apenas maiores de 15 anos');
+          inputAno.focus();
     } else {
       window.alert('Cadastrado com sucesso !!!');
       formOk = true;
