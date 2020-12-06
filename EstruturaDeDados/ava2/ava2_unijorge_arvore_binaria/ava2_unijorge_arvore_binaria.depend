@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1607214031 source:c:\projetos\trabalhos_da_faculdade\estruturadedados\ava1\ava2_unijorge_arvore_binaria\main.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<conio.h>
+
